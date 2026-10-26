@@ -1,0 +1,49 @@
+You are a senior full-stack engineer and UI/UX designer. Build a polished, clickable DEMO website for a business that offers services and sells online training courses. It will be sent to a prospective client as a live preview link, so it must look professional, load fast and work on mobile.
+
+TECH STACK
+- Next.js (App Router) + TypeScript + Tailwind CSS
+- shadcn/ui components, lucide-react icons, Framer Motion for subtle animations
+- No real backend: use mock data in local JSON/TS files and localStorage for auth, cart, and purchases
+- Must run with `npm install && npm run dev` and deploy to Vercel with zero config
+
+BRANDING
+- Use a neutral placeholder brand called "Your Brand Academy" with an easy-to-change logo, name and color tokens in one config file (/lib/brand.ts)
+- Modern, clean, trustworthy look. Primary color: deep blue/indigo with a warm accent. Generous whitespace, rounded cards, good typography (Inter or Plus Jakarta Sans)
+- Fully responsive, light mode, accessible (contrast, focus states, alt text)
+- Small footer note: "Demo prototype by CodesInc"
+
+PAGES AND FEATURES (match the client's requirements exactly)
+1. Home: hero with headline and CTA, short company intro, highlighted services, featured courses, testimonials, FAQ, final CTA
+2. About / Company information: story, mission, team section, contact details, contact form (mock submit with success toast)
+3. Services and Prices: service cards plus a clear pricing table (3 tiers), each with a "Book / Enquire" button opening a modal form
+4. Training Courses (separate section):
+   - Course catalog with search, category filter and sort
+   - Course detail page: description, curriculum accordion, duration, level, instructor, price, "Add to cart" / "Buy now"
+5. Online customer registration and login:
+   - Register, login, logout, forgot password UI (mock, stored in localStorage)
+   - Form validation with react-hook-form + zod
+6. Online course shop with payment:
+   - Cart drawer, checkout page with order summary
+   - Payment step that looks like Stripe/PayPal/card checkout (MOCK only, show "Test mode" badge, no real payments)
+   - Order confirmation page, then the course appears in the student account
+7. Student personal account (protected, redirect to login if not signed in):
+   - Dashboard: my courses with progress bars, continue-learning button, recent activity
+   - Course player page: embedded sample video, lesson list sidebar, mark lesson complete, downloadable materials (PDF/resource links), notes tab
+   - Purchased courses only; locked courses show an "Unlock" button
+   - Profile settings and order history
+8. Admin preview (/admin, demo-only): simple dashboard with courses table, add/edit course form UI, orders and students list, to show the client they can manage content themselves
+
+DEMO DATA
+- 8 sample courses across 3 categories, each with 5-8 lessons, prices, ratings, thumbnails (use Unsplash image URLs or gradients)
+- Pre-created demo student login: demo@student.com / demo1234, with 2 already "purchased" courses so the account looks alive
+- Add a small "Demo credentials" hint on the login page
+
+QUALITY REQUIREMENTS
+- Clean, reusable component structure and clear folder layout
+- Loading skeletons, empty states, toasts and error states
+- SEO basics: metadata, Open Graph tags, favicon
+- Lighthouse-friendly: optimized images, no layout shift
+- Add a README with setup steps, demo login, how to change brand/colors, and a list of what is mocked vs. what a production version would use (Stripe/PayPal gateway, auth with NextAuth or Clerk, database like PostgreSQL/Supabase, secure video hosting like Vimeo/Mux/Bunny)
+
+DELIVERABLE
+Build the full project, run it, fix all errors, and give me the final run/deploy instructions. Prioritize visual polish and a smooth end-to-end flow: Browse courses -> Register -> Add to cart -> Mock checkout -> Student dashboard -> Watch lesson.
